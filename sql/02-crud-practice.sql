@@ -9,7 +9,6 @@ SELECT name, course FROM students;
 SELECT * FROM students WHERE course = 'MCA';
 SELECT * FROM students WHERE age > 22;
 SELECT * FROM students ORDER BY age DESC;
--- Inspect the matching row before modifying it.
 SELECT * FROM students WHERE name = 'Rahul' AND course = 'BCA';
 UPDATE students SET age = 23 WHERE name = 'Rahul' AND course = 'BCA' LIMIT 1;
 SELECT * FROM students WHERE name = 'Sneha' AND course = 'MCA';
