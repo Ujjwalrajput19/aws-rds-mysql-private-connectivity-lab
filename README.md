@@ -4,7 +4,7 @@ Hands-on AWS lab: connect a local Sqlectron MySQL client to a private Amazon RDS
 
 ## Lab evidence
 
-The lab session demonstrated an SSH connection from WSL to EC2, EC2-to-RDS TCP reachability on port 3306, local SSH forwarding on 127.0.0.1:3307, and a successful Sqlectron MySQL connection. The MySQL server reported version 8.4.11. The `cloud_lab` database and `students` table were created. Follow-on DML practice is included separately and is not claimed as completed.
+The lab session demonstrated SSH from WSL to EC2, EC2-to-RDS TCP reachability on port 3306, local SSH forwarding on 127.0.0.1:3307, and a successful Sqlectron MySQL connection. MySQL reported version 8.4.11. The `cloud_lab` database and `students` table were created. Follow-on DML practice is included separately and is not claimed as completed.
 
 ## Architecture
 
@@ -85,18 +85,6 @@ See [`screenshots/README.md`](screenshots/README.md), [`docs/troubleshooting.md`
 ## Cost cleanup
 
 Disconnect Sqlectron, stop the SSH tunnel, and stop EC2/RDS when not needed. Stopped RDS still incurs storage and some backup-related charges, and stopped DB instances automatically restart after at most seven days. Check Billing for remaining resources. Delete resources only when no longer needed and after preserving required data/snapshots.
-
-## Repository layout
-
-```text
-architecture/architecture.mmd
-docs/linkedin-post-draft.md
-docs/security-and-cleanup.md
-docs/troubleshooting.md
-screenshots/01-...png through 07-...png
-sql/01-create-schema.sql
-sql/02-crud-practice.sql
-```
 
 ## Author
 
