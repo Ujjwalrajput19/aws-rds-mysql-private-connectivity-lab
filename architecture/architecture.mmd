@@ -1,0 +1,5 @@
+flowchart TD
+    A[Developer workstation<br/>Windows + WSL] -->|Sqlectron: 127.0.0.1:3307| B[Local SSH port forward]
+    B -->|Encrypted SSH over TCP 22| C[EC2 bastion host<br/>Amazon Linux 2023]
+    C -->|Private VPC TCP 3306| D[(Amazon RDS for MySQL<br/>Private database)]
+    D --> C --> B --> A
