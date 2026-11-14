@@ -12,13 +12,11 @@ Confirm EC2 is running, the public IP is current, the key is correct, and the EC
 
 ## 2. EC2 to RDS
 
-From EC2:
-
 ```bash
 timeout 5 bash -c '</dev/tcp/<RDS_ENDPOINT>/3306' && echo "RDS CONNECTION SUCCESSFUL" || echo "RDS CONNECTION FAILED"
 ```
 
-If it fails, check RDS status, endpoint/port, VPC path, EC2 outbound rules, and RDS inbound TCP 3306 from the EC2 security group. This test proves TCP reachability only, not MySQL authentication.
+If it fails, check RDS status, endpoint/port, VPC path, EC2 outbound rules, and RDS inbound TCP 3306 from the EC2 security group. This proves TCP reachability only, not MySQL authentication.
 
 ## 3. Start the SSH tunnel from WSL
 
@@ -29,8 +27,6 @@ ssh -i ~/.ssh/<your-ec2-key>.pem -N -L 3307:<RDS_ENDPOINT>:3306 ec2-user@<EC2_PU
 Keep this process running. A blank terminal with a blinking cursor is normal with `-N`.
 
 ## 4. Test the local forwarded port
-
-In a second WSL terminal:
 
 ```bash
 nc -vz 127.0.0.1 3307
